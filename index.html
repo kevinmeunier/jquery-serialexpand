@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://github.meunierkevin.com/assets/img/favicon.svg" rel="icon" type="image/svg+xml">
+<link href="https://github.meunierkevin.com/assets/css/site-all.css" rel="stylesheet">
+<script src="https://github.meunierkevin.com/assets/js/jquery.min.js"></script>
+<script src="https://github.meunierkevin.com/assets/js/site-all.js"></script>
+<title>jQuery serialexpand — Meunier Kévin</title>
+</head>
+<body>
+
+<script>writeHeader('serialexpand');</script>
+
+<div id="section-demonstration-html">
+  <p>
+    <span class="grid-inline">
+      <span class="form-aside-radio"><input type="radio" name="customertype" data-serialexpand="registrationform"> <label>New customer</label></span>
+      <span class="form-aside-radio"><input type="radio" name="customertype" data-serialexpand="loginform"> <label>Existing customer</label></span>
+    </span>
+  </p>
+  <div data-serialexpand-target="registrationform">Registration form</div>
+  <div data-serialexpand-target="loginform">Login form</div>
+
+  <hr>
+
+  <p>
+    <span class="form-aside-checkbox"><input type="checkbox" name="fruits"> <label>Apple</label></span>
+    <span class="form-aside-checkbox"><input type="checkbox" name="fruits"> <label>Banana</label></span>
+    <span class="form-aside-checkbox"><input type="checkbox" name="fruits"> <label>Orange</label></span>
+    <span class="form-aside-checkbox"><input type="checkbox" name="fruits"> <label>Strawberry</label></span>
+    <span class="form-aside-checkbox"><input type="checkbox" name="fruits" data-serialexpand="other"> <label>Other (please specify)</label></span>
+  </p>
+  <div data-serialexpand-target="other">Additional field</div>
+
+  <hr>
+
+  <p>
+    <select name="content">
+      <option data-serialexpand="content-a">Content A</option>
+      <option data-serialexpand="content-b">Content B</option>
+      <option>No content</option>
+    </select>
+  </p>
+  <div data-serialexpand-target="content-a">Content A</div>
+  <div data-serialexpand-target="content-b">Content B</div>
+</div>
+<div id="section-demonstration-js">
+  <script src="dist/jquery.serialexpand.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    // jquery.serialexpand initialisation
+    $.serialexpand({
+      selector: '[data-serialexpand]'
+    });
+  });
+  </script>
+</div>
+<div id="section-demonstration-css">
+  <style type="text/css">
+  /* Demo styles */
+  [data-serialexpand-target]{padding:30px;background-color:rgba(255, 255, 255, .05);color:rgba(255, 255, 255, .25);font-size:13px;font-style:italic;text-align:center;}
+
+  .grid-inline{display:flex;flex-wrap:wrap;align-items:center;margin:-40px 0 0 -40px;}
+  .grid-inline > *{margin:40px 0 0 40px;}
+
+  .form-aside-radio{display:block;padding-left:20px;}
+  .form-aside-radio > input{margin:0 7px 0 -20px;}
+
+  .form-aside-checkbox{display:block;padding-left:20px;}
+  .form-aside-checkbox.is-small{font-size:15px;line-height:1.6;}
+  .form-aside-checkbox > input{margin:0 7px 0 -20px;}
+  </style>
+</div>
+
+<script>writeFooter('serialexpand');</script>
+
+</body>
+</html>
