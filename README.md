@@ -48,7 +48,7 @@ Name               | Type       | Default                             | Descript
 selector           | *string*   | *undefined*                         | Mandatory option to identify the trigger elements
 fxIn               | *string*   | *'slideDown'*                       | Show animation based on jQuery (additional options: fadeIn, show)
 fxOut              | *string*   | *'slideUp'*                         | Hide animation based on jQuery (additional options: fadeOut, hide)
-getTarget          | *function* | See [jquery.serialexpand.js](https://github.com/kevinmeunier/jquery-serialexpand/blob/main/dist/jquery.serialcookie.js) | Get the target based on the trigger element
+getTarget          | *function* | See [jquery.serialexpand.js](https://github.com/kevinmeunier/jquery-serialexpand/blob/main/dist/jquery.serialexpand.js) | Get the target based on the trigger element
 
 
 ## Bugs / Feature request
