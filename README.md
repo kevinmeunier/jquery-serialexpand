@@ -36,7 +36,7 @@ $(document).ready(function(){
   $.serialexpand({
     selector: '[data-serialexpand]'
   });
-});(
+});
 ```
 
   
